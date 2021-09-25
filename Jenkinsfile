@@ -5,8 +5,10 @@ pipeline {
       steps {
       sh 'rm -rf ./kura_test_repo/cypress2'
       sh '''
-        npm install 
-        npm run start
+        npm install
+        npm run build
+        npm install -g serve
+        serve -s build
         '''
       }
     }
@@ -17,8 +19,14 @@ pipeline {
       steps {
       sh ''' 
         npm install cypress
+        npm -g mocha
         npx cypress run --spec ./cypress/integration/test.spec.js
         '''
+      }
+      post {
+        always {
+          junit 'cypress run --reporter junit --reporter-options "mochaFile=results/my-test-output.xml,toConsole=true"' 
+          
       }
     }
   }
