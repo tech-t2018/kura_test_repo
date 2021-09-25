@@ -22,7 +22,7 @@ pipeline {
       }
       post {
         always {
-          junit 'cypress run --reporter junit --reporter-options "mochaFile=results/my-test-output.xml,toConsole=true"'
+          junit 'results/cypress-report.xml''
         }
           
       }
