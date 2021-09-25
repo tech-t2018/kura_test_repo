@@ -17,7 +17,7 @@ pipeline {
       steps {
       sh ''' 
         npm install cypress
-        npx cypress run --spec cypress/integration/test.spec.js
+        npx cypress run --spec ./cypress/integration/test.spec.js
         '''
       }
     }
