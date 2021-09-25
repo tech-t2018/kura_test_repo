@@ -16,7 +16,7 @@ pipeline {
       steps {
       sh ''' 
         npm install cypress
-        npm -g mocha
+        npm install -g mocha
         npx cypress run --spec ./cypress/integration/test.spec.js
         '''
       }
