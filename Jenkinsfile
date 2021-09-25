@@ -16,7 +16,7 @@ pipeline {
       }
       steps {
       sh ''' 
-        npm intall cypress
+        npm install cypress
         npx cypress run
         '''
       }
