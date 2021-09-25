@@ -15,8 +15,7 @@ pipeline {
         label 'React-dev'
       }
       steps {
-      sh '''
-        rm -rfv !("./kura_test_repo/cypress2")
+      sh ''' 
         npm intall --save-dev ./cypress2/cypress
         npx cypress run ./cypress2
         '''
