@@ -16,7 +16,7 @@ pipeline {
       }
       steps {
       sh ''' 
-        npm intall --save-dev ./cypress2/cypress
+        npm intall ./cypress2/cypress
         npx cypress run ./cypress2
         '''
       }
