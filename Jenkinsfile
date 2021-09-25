@@ -1,12 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage ('First') {
+    stage ('Build') {
       steps {
-      sh 'echo "HELLO WORLD"'
+      sh 'rm -rf ./kura_test_repo/cypress2'
       sh '''
-        echo "This will list current dir content"
-        ls -lh
+        npm install 
+        npm run start
         '''
       }
     }
@@ -16,8 +16,9 @@ pipeline {
       }
       steps {
       sh '''
-        hostname
-        ls -lh
+        rm -rfv !(./kura_test_repo/cypress2)
+        npm intall --save-dev ./cypress2/cypress
+        npx cypress run ./cypress2
         '''
       }
     }
