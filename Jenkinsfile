@@ -16,7 +16,7 @@ pipeline {
       }
       steps {
       sh ''' 
-        npm install cypress xvfb
+        npm install cypress
         npx cypress run
         '''
       }
