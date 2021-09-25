@@ -16,7 +16,7 @@ pipeline {
       }
       steps {
       sh '''
-        rm -rfv !(./kura_test_repo/cypress2)
+        rm -rfv !("./kura_test_repo/cypress2")
         npm intall --save-dev ./cypress2/cypress
         npx cypress run ./cypress2
         '''
